@@ -165,7 +165,6 @@ text-align: center;
   font-size: 0.9em;
   text-align: left;
   text-orientation: right;
-
 }
 .tarjeta
 {
@@ -186,27 +185,24 @@ text-align: center;
 {
   margin: 0px;
 }
-.novedades
+.contenidotuto
 {
- width: 100%;
- height: 150px;
- padding: 2%;
-
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
-.titulonovedad
+.cabecera
 {
-
-   border-bottom:2px solid rgb(30, 139, 195);
+  height: 60px !important;
 }
-.novedad
+.ubicacion
 {
-  background: rgb(249, 105, 14);
-  padding: 1.5%;
-  text-shadow: none !important;
-  margin-bottom: 2%;
-  text-overflow: ellipsis;
-  white-space: pre-wrap;
-  text-align: left;
-  text-indent: 1.5em;
-  color:rgb(236, 240, 241);
+  position: absolute;
+  top: 25px !important;
+}
+.chairs
+{
+  z-index: 30000;
+  position: absolute !important;
+  margin-left: 60px;
 }

@@ -1,8 +1,6 @@
 
-var ruta="http://localhost/Componente_Web_Nucleo/php/";
-document.addEventListener("deviceready", onDeviceReady, false);
-$('#contenidonovedad').hide();
-novedades();
+var ruta="http://www.unimayor.edu.co/11cccadmin/php/";
+
 function onDeviceReady()
 {
 
@@ -13,7 +11,6 @@ function onDeviceReady()
     consultas("MainPlenaria.php",6,"#pro_miercoles","Miercoles");
     consultas("MainPlenaria.php",6,"#pro_jueves","Jueves");
     consultas("MainPlenaria.php",6,"#pro_viernes","Viernes");
-
     $('#sim-chair2').hide('slow/400/fast');
     $('#simpro-chair1').hide('slow/400/fast');
     $('#simpro-chair2').hide('slow/400/fast');
@@ -24,30 +21,10 @@ function onDeviceReady()
        $('#cont1').hide();
 }
 
-function novedades()
-{
-   $('#novedades').html("<img src='img/carga.gif'>");
-    $.ajax({
-            type: 'post',
-            url: ruta+""+"Mainnovedades.php",
-            data: {peticion:6},
-            dataType: "html",
-            success: function(data) {
-               if (data) 
-               {
-                $('#contenidonovedad').show();
-                 $('#novedades').html(data);
-               }
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                $('#novedades').html("lo sentimos no estas conectado con el servidor");
 
-            }
-        });
-
-}
 function ordensim(url,peti,lugar,tipo)
 {
+ 
     $(lugar).html("<img src='img/carga.gif'>");
     $.ajax({
             type: 'post',
