@@ -3,7 +3,8 @@ var ruta="http://www.unimayor.edu.co/11cccadmin/php/";
 
 function onDeviceReady()
 {
-
+  $('#contenidonovedad').hide();
+  novedades();
    orden("Main.php",6,"#lista");
     ordensim("MainSimposio.php",5,"#pro_mar","Doctoral");
     ordensim("MainSimposio.php",5,"#listaSimpo","Doctoral");
@@ -17,9 +18,14 @@ function onDeviceReady()
       $('#progra').hide();
       $('#prograjueves').hide();
       $('#prograviernes').hide();
+       $('#rutafup').hide();
       $('#nav').hide();
+       $('#piso2').hide();
        $('#cont1').hide();
 }
+$('.carga').on('tap',function(){
+   novedades();
+})
 
 
 function ordensim(url,peti,lugar,tipo)
@@ -35,7 +41,7 @@ function ordensim(url,peti,lugar,tipo)
                  $(lugar).html(data);           
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                $(lugar).html("lo sentimos no estas conectado con el servidor");
+                $(lugar).html("<div class='adver'> :( NO ESTAS CONECTADO CON EL SERVIDOR INTENTA CONECTANDOTE A INTERNET. :(</div>");
 
             }
         });
@@ -52,7 +58,7 @@ function orden(url,peti,lugar)
                 $(lugar).html(data);
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                $(lugar).html("lo sentimos no estas conectado con el servidor");
+                $(lugar).html("<div class='adver'> :( NO ESTAS CONECTADO CON EL SERVIDOR INTENTA CONECTANDOTE A INTERNET. :(</div>");
 
             }
         });
@@ -70,7 +76,7 @@ function consultas(url,peti,lugar,dato)
             $(lugar).html(data);
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                $(lugar).html("lo sentimos no estas conectado con el servidor");
+                $(lugar).html("<div class='adver'> :( NO ESTAS CONECTADO CON EL SERVIDOR INTENTA CONECTANDOTE A INTERNET. :(</div>");
             }
         });
 }
@@ -86,11 +92,48 @@ function programacion(url,peti,lugar,dato,dia)
             $(lugar).html(data);
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                $(lugar).html("lo sentimos no estas conectado con el servidor");
+                $(lugar).html("<div class='adver'> :( NO ESTAS CONECTADO CON EL SERVIDOR INTENTA CONECTANDOTE A INTERNET. :(</div>");
 
             }
         });
 }
+function novedades()
+{
+   $('#novedades').html("<img src='img/carga.gif'>");
+    $.ajax({
+            type: 'post',
+            url: ruta+""+"Mainnovedades.php",
+            data: {peticion:6},
+            dataType: "html",
+            success: function(data) {
+               if (data) 
+               {
+                $('#contenidonovedad').show();
+                 $('#novedades').html(data);
+               }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $('#novedades').html("lo sentimos no estas conectado con el servidor");
+
+            }
+        });
+
+}
+$('#mapa1').on('tap',function(){
+  $('#piso2').hide('slow/400/fast');
+  $('#rutafup').hide('slow/400/fast');
+  $('#piso1').show('slow/400/fast');
+})
+$('#mapa2').on('tap',function(){
+  $('#piso1').hide('slow/400/fast');
+  $('#rutafup').hide('slow/400/fast');
+  $('#piso2').show('slow/400/fast');
+})
+$('#fup').on('tap',function(){
+  $('#piso1').hide('slow/400/fast');
+  $('#rutafup').show('slow/400/fast');
+  $('#piso2').hide('slow/400/fast');
+})
 //plenarias
 $('#btn_plenaria').on('tap',function(){
   consultas("MainPlenaria.php",6,"#listamartes","Martes");
@@ -120,16 +163,17 @@ $('#programrt').on('tap',function(){
 })
 $('#activ_mar').on('tap',function()
 { 
- 
-  $('#simpro-chair1').hide('slow/400/fast');
+ $('#simpro-chair1').hide('slow/400/fast');
     $('#simpro-chair2').hide('slow/400/fast');
+  $('#nav').hide('slow/400/fast');
+
  consultas("MainActividades.php",7,"#pro_mar","Martes");
-  $('#pro_mar').show('slow/400/fast');
+  $('#pro_mar').show('slow/400/fast'); 
 })
 $('#mar_sim').on('tap',function()
 { 
   $('#simpro-chair1').show('slow/400/fast');
- orden("MainSimposio.php",8,"#pro_mar");
+ordensim("MainSimposio.php",5,"#pro_mar","Doctoral");
   $('#nav').show('slow/400/fast');
 })
 

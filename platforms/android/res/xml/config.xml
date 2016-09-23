@@ -82,7 +82,7 @@
     <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
     <allow-intent href="market:*" />
     <name>app_nucleo</name>
-    <description>Hello World sample application that responds to the deviceready event.</description>
+    <description>aplicación 11ccc</description>
     <author email="support@phonegap.com" href="http://phonegap.com">PhoneGap Team</author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
@@ -93,8 +93,7 @@
     <gap:plugin name="cordova-plugin-network-information" source="npm" version="1.2.0" />
     <icon src="icon.png" />
     <access origin="*" />
-    <access origin="http://localhost/ModLogin/php/Main.php" />
-    <access origin="http://localhost/ModLogin/php/MainSimposio.php" />
+    <access origin="ttp://www.unimayor.edu.co/11cccadmin/php/" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
