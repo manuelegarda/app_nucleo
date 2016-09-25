@@ -1,8 +1,9 @@
 
 var ruta="http://www.unimayor.edu.co/11cccadmin/php/";
-
+//
 function onDeviceReady()
 {
+ 
   $('#contenidonovedad').hide();
   novedades();
    orden("Main.php",6,"#lista");
@@ -80,7 +81,7 @@ function consultas(url,peti,lugar,dato)
             }
         });
 }
-function programacion(url,peti,lugar,dato,dia)
+function programacion(url,peti,lugar,dato,dia,btn_oculto)
 {
   $(lugar).html("<img src='img/carga.gif'>");
     $.ajax({
@@ -89,7 +90,14 @@ function programacion(url,peti,lugar,dato,dia)
             data: {peticion:peti,dato:dato,dia:dia},
             dataType: "html",
             success: function(data) {
-            $(lugar).html(data);
+            if (data) 
+            {
+              $(lugar).html(data);
+            }else
+            {
+              $(btn_oculto).hide('slow/400/fast');
+            }
+
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 $(lugar).html("<div class='adver'> :( NO ESTAS CONECTADO CON EL SERVIDOR INTENTA CONECTANDOTE A INTERNET. :(</div>");
@@ -199,22 +207,22 @@ $('#mier_line').on('tap',function()
 {
   
   $('#pro_miercoles').hide();
-  programacion("MainPaper.php",7,'#compumier',1,"Miercoles");
-  programacion("MainPaper.php",7,'#arquimier',2,"Miercoles");
-  programacion("MainPaper.php",7,'#ingemier',3,"Miercoles");
-  programacion("MainPaper.php",7,'#intermier',4,"Miercoles");
-  programacion("MainPaper.php",7,'#procesmier',5,"Miercoles");
-  programacion("MainPaper.php",7,'#sistemmier',6,"Miercoles");
-  programacion("MainPaper.php",7,'#informier',7,"Miercoles");
-  programacion("MainPaper.php",7,'#rendimier',8,"Miercoles");
-  programacion("MainPaper.php",7,'#datosmier',9,"Miercoles");
-  programacion("MainPaper.php",7,'#colamier',10,"Miercoles");
+  programacion("MainPaper.php",7,'#compumier',1,"Miercoles","#colap_me1");
+  programacion("MainPaper.php",7,'#arquimier',2,"Miercoles","#colap_si1");
+  programacion("MainPaper.php",7,'#ingemier',3,"Miercoles","#colap_in1");
+  programacion("MainPaper.php",7,'#intermier',4,"Miercoles","#colap_ih1");
+  programacion("MainPaper.php",7,'#procesmier',5,"Miercoles","#colap_pi1");
+  programacion("MainPaper.php",7,'#sistemmier',6,"Miercoles","#colap_sig1");
+  programacion("MainPaper.php",7,'#informier',7,"Miercoles","#colap_ie1");
+  programacion("MainPaper.php",7,'#rendimier',8,"Miercoles","#colap_sd1");
+  programacion("MainPaper.php",7,'#datosmier',9,"Miercoles","#colap_di1");
+  programacion("MainPaper.php",7,'#colamier',10,"Miercoles","#colap_sc1");
   $('#progra').show('slow/400/fast');
 })
 $('#mier_tuto').on('tap',function()
 {
   $('#progra').hide();
-  consultas("Main.php",7,'#pro_miercoles',"Jueves");
+  consultas("Main.php",7,'#pro_miercoles',"Miercoles");
     $('#pro_miercoles').show('slow/400/fast');
 })
 
@@ -240,16 +248,16 @@ $('#jue_activ').on('tap',function()
 $('#jue_line').on('tap',function()
 {
   $('#pro_jueves').hide();
-  programacion("MainPaper.php",7,'#compujue',1,"Jueves");
-  programacion("MainPaper.php",7,'#arquijue',2,"Jueves");
-  programacion("MainPaper.php",7,'#ingejue',3,"Jueves");
-  programacion("MainPaper.php",7,'#interjue',4,"Jueves");
-  programacion("MainPaper.php",7,'#procesjue',5,"Jueves");
-  programacion("MainPaper.php",7,'#sistemjue',6,"Jueves");
-  programacion("MainPaper.php",7,'#inforjue',7,"Jueves");
-  programacion("MainPaper.php",7,'#rendijue',8,"Jueves");
-  programacion("MainPaper.php",7,'#datosjue',9,"Jueves");
-  programacion("MainPaper.php",7,'#colajue',10,"Jueves");
+  programacion("MainPaper.php",7,'#compujue',1,"Jueves","#colap_me2");
+  programacion("MainPaper.php",7,'#arquijue',2,"Jueves","#colap_si2");
+  programacion("MainPaper.php",7,'#ingejue',3,"Jueves","#colap_in2");
+  programacion("MainPaper.php",7,'#interjue',4,"Jueves","#colap_ih2");
+  programacion("MainPaper.php",7,'#procesjue',5,"Jueves","#colap_pi2");
+  programacion("MainPaper.php",7,'#sistemjue',6,"Jueves","#colap_sig2");
+  programacion("MainPaper.php",7,'#inforjue',7,"Jueves","#colap_ie2");
+  programacion("MainPaper.php",7,'#rendijue',8,"Jueves","#colap_sd2");
+  programacion("MainPaper.php",7,'#datosjue',9,"Jueves","#colap_di2");
+  programacion("MainPaper.php",7,'#colajue',10,"Jueves","#colap_sc2");
    $('#prograjueves').show('slow/400/fast');
 })
 $('#jue_tuto').on('tap',function()
@@ -280,16 +288,16 @@ $('#vier_activ').on('tap',function()
 $('#vier_line').on('tap',function()
 {
   $('#pro_viernes').hide();
-  programacion("MainPaper.php",7,'#compuvier',1,"Viernes");
-  programacion("MainPaper.php",7,'#arquivier',2,"Viernes");
-  programacion("MainPaper.php",7,'#ingevier',3,"Viernes");
-  programacion("MainPaper.php",7,'#intervier',4,"Viernes");
-  programacion("MainPaper.php",7,'#procesvier',5,"Viernes");
-  programacion("MainPaper.php",7,'#sistemvier',6,"Viernes");
-  programacion("MainPaper.php",7,'#inforvier',7,"Viernes");
-  programacion("MainPaper.php",7,'#rendivier',8,"Viernes");
-  programacion("MainPaper.php",7,'#datosvier',9,"Viernes");
-  programacion("MainPaper.php",7,'#colavier',10,"Viernes");
+  programacion("MainPaper.php",7,'#compuvier',1,"Viernes","#colap_me3");
+  programacion("MainPaper.php",7,'#arquivier',2,"Viernes","#colap_si3");
+  programacion("MainPaper.php",7,'#ingevier',3,"Viernes","#colap_in3");
+  programacion("MainPaper.php",7,'#intervier',4,"Viernes","#colap_ih3");
+  programacion("MainPaper.php",7,'#procesvier',5,"Viernes","#colap_pi3");
+  programacion("MainPaper.php",7,'#sistemvier',6,"Viernes","#colap_sig3");
+  programacion("MainPaper.php",7,'#inforvier',7,"Viernes","#colap_ie3");
+  programacion("MainPaper.php",7,'#rendivier',8,"Viernes","#colap_sd3");
+  programacion("MainPaper.php",7,'#datosvier',9,"Viernes","#colap_di3");
+  programacion("MainPaper.php",7,'#colavier',10,"Viernes","#colap_sc3");
    $('#prograviernes').show('slow/400/fast');
 })
 

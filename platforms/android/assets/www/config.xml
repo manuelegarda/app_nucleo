@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.phonegap.app_nucle" version="1.1.1" android-versionCode="27">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.phonegap.app_nucle" version="1.0.0">
   <name>APP 11CCC</name>
   <description>aplicación 11ccc</description>
   <author href="http://phonegap.com" email="support@phonegap.com">PhoneGap Team</author>
@@ -11,9 +11,6 @@
     </feature>
     <feature name="NetworkStatus">
     <param name="ios-package" value="CDVConnection" />
-</feature>
-<feature name="SplashScreen">
-    <param name="android-package" value="org.apache.cordova.SplashScreen" />
 </feature>
 <Capabilities>
     <Capability Name="ID_CAP_NETWORKING" />

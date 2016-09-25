@@ -8,10 +8,12 @@
     <meta name="msapplication-tap-highlight" content="no" />
    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; img-src * data:; font-src 'self' data:;"/>
+    <script type="phonegap.js"></script>
      <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="js/jQueryMobile/jquery.mobile-1.4.5.min.js"></script>   
      <link rel="stylesheet" type="text/css" href="js/jQueryMobile/jquery.mobile-1.4.5.min.css">
      <link rel="stylesheet" type="text/css" href="css/index.css">
+       
     <title>APP_NUCLEO</title>
 </head>
 
@@ -30,15 +32,20 @@
            <a href="#dia" class="rtn">PROGRAMACIÓN DIARIA</a>
            <a href="#actividades" class="rtn" id="actividades-btn">ACTIVIDADES SOCIALES</a>
        </div>
+       <div class="novedades" id="contenidonovedad">
+                <h2 class="titulonovedad">Novedades</h2>
+                <div id="novedades"></div>
+
+         </div>
        </div>
       
        
-    <div id="nav-menu" data-role="panel" data-position="left" data-display="reveal" >
+    <div id="nav-menu" data-role="panel" data-position="left" data-display="reveal" class="adelante">
         <ul data-role="listview" dat-inset="true">
             <li data-role="list-divider" >MENÚ</li>
             <li><a href="#speakers"   data-transition="slide">SPEAKERS</a></li>
             <li><a href="#organizadores"   data-transition="slide">ORGANIZADORES</a></li>
-            <li><a href="#"   data-transition="slide">MAPA</a></li>
+            <li><a href="#mapas"   data-transition="slide">MAPA</a></li>
             <li><a href="#acerca_de"   data-transition="slide">ACERCA DE</a></li>
         </ul>
     </div>
@@ -81,8 +88,8 @@
   
     </div>
     <div data-role="page" id="actividades">
-        <div data-role="header" class="cabecera"class="show-page-loading-msg">
-            <a href="#home"  class=" ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+        <div data-role="header" class="cabecera show-page-loading-msg">
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
             <h2>ACTIVIDADES SOCIALES</h2>
 
         </div>
@@ -94,7 +101,7 @@
     </div>
     <div data-role="page" id="tutorial">
         <div data-role="header" class="cabecera"class="show-page-loading-msg">
-            <a href="#home"  class=" ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
             <h2>TUTORIAL</h2>
         </div>
        <div role="content"  id="contenido">
@@ -105,7 +112,7 @@
     </div>
     <div data-role="page" id="simposio" data-transition="slide">
         <div data-role="header" class="cabecera" data-url="panel-fixed">
-            <a href="#home"  class=" ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
             <h2>SIMPOSIOS</h2>
             <span id="sim-chair1" class="chairs">Chair:Cesar Collazos</span>
             <span id="sim-chair2" class="chairs">Chair:José Luis Arciniegas</span>
@@ -130,7 +137,7 @@
     
     <div data-role="page" id="plenarias" data-transition="slide">
         <div data-role="header" class="cabecera" data-url="panel-fixed">
-            <a href="#home"  class=" ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
             <h2>PLENARIAS</h2>
         </div>
        <div role="content" class="ui-content" id="contenido"> 
@@ -154,7 +161,7 @@
     </div>
     <div data-role="page" id="martes" data-transition="slide">
         <div data-role="header" class="cabecera" data-url="panel-fixed">
-            <a href="#home"  class=" ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
             <h1>PROGRAMACION DIA MARTES</h1> 
             <span id="simpro-chair1" class="chairs">Chair:Cesar Collazos </span>
             <span id="simpro-chair2" class="chairs">Chair:José Luis Arciniegas</span>
@@ -184,7 +191,7 @@
 
 <div data-role="page" id="miercoles" data-transition="slide">
         <div data-role="header" class="cabecera" data-url="panel-fixed">
-            <a href="#home"  class=" ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
             <div class="title_progra">PROGRAMACION DIA MIERCOLES</div> 
         </div>
         <div data-role="navbar">
@@ -246,7 +253,7 @@
 </div>
 <div data-role="page" id="jueves" data-transition="slide">
         <div data-role="header" class="cabecera" data-url="panel-fixed">
-            <a href="#home"  class=" ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
             <div class="title_progra">PROGRAMACION DIA JUEVES</div> 
         </div>
        <div  data-position="fixed">
@@ -312,7 +319,7 @@
 
 <div data-role="page" id="viernes" data-transition="slide">
         <div data-role="header" class="cabecera" data-url="panel-fixed">
-            <a href="#home"  class=" ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
             <div class="title_progra">PROGRAMACION DIA VIERNES</div> 
         </div>
         <div data-role="navbar">
@@ -378,24 +385,24 @@
 </div>
 <div data-role="page" id="acerca_de" data-transition="slide">
         <div data-role="header" class="cabecera" data-url="panel-fixed">
-            <a href="#home"  class=" ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
            <h3>ACERCA DE</h3>
           
         </div>
        <div role="content" class="ui-content" id="contenido">
             <p>Está aplicación fue desarrollada por: </p>
            <div class="tarjeta">
-             <h1 class="nombre">Janier Alejandro Banguera Correa</h1>
+             <h3 class="nombre">Janier Alejandro Banguera Correa</h3>
              <h3 class="correo">alejo95@unimayor.edu.co</h3>
              <h3 class="movil">(+057) 313 419 9115</h3>
            </div>
            <div class="tarjeta">
-             <h1 class="nombre">Manuel Arturo Melo Legarda</h1>
+             <h3 class="nombre">Manuel Arturo Melo Legarda</h3>
              <h3 class="correo">manuelegarda@unimayor.edu.co</h3>
              <h3 class="movil">(+057) 317 853 8119</h3>
            </div>
            <div class="tarjeta">
-             <h1 class="nombre">Juan Manuel Chavez</h1>
+             <h3 class="nombre">Juan Manuel Chavez</h3>
              <h3 class="correo">jchaves@unimayor.edu.co</h3>
              <h3 class="movil">(+057) 315 832 3323</h3>
            </div>
@@ -403,23 +410,56 @@
            
        </div>
     </div>
+   
+    <div data-role="page" id="mapas" data-transition="slide">
+        <div data-role="header" class="cabecera" data-url="panel-fixed">
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+           <h3>Mapas</h3>
+          
+        </div>
+
+    <div role="content" class="ui-content">
+
+		
+			  <img src="img/CM2.jpg" alt="piso2" id="piso2" width="100%">
+			  <img src="img/CM1.png" alt="piso1" id="piso1" width="100%">
+			  <img src="img/rutafup.png" alt="rutafup" id="rutafup" width="100%">
+
+	<div data-role="footer" data-position="fixed">
+         <div data-role="navbar">
+           <ul>
+             <li><a href="#"  id="mapa1" class="ui-btn-active" data-transition="slide">PISO 1</a></li>
+             <li><a href="#"  id="mapa2"  data-transition="slide">PISO 2</a></li>
+             <li><a href="#"  id="fup"  data-transition="slide">RUTA FUP</a></li>
+           </ul>
+         </div>
+       </div>
+		
+    </div>
+      
+    </div>
     <div data-role="page" id="organizadores" data-transition="slide">
         <div data-role="header" class="cabecera" data-url="panel-fixed">
-            <a href="#home"  class=" ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
            <h3>ORGANIZADORES</h3>
           
         </div>
-        <center><img src="img/ieee.png" alt="ieee">
-        <img src="img/sociedad.png" alt="sociedad colombiana de computacion">
-        <img src="img/unicauca.png" alt="unicauca" width="200" height="250">
-        <img src="img/fup.png" alt="fup">
-        <img src="img/comfacauca.jpg" alt="comfacauca">
-        <img src="img/logounimayor.jpg" alt="logounimayor" width="200" height="200" class="logouni"></center>
+        <center><img src="img/ieee.png" alt="ieee" class="logosorga">
+				
+        <img src="img/sociedad.png" alt="sociedad colombiana de computacion" class="logosorga">
+				
+        <img src="img/unicauca.png" alt="unicauca" width="70%" height="50%" class="logosorga">
+				
+        <img src="img/fup.png" alt="fup" class="logosorga">
+				
+        <img src="img/comfacauca.jpg" alt="comfacauca" class="logosorga">
+				
+        <img src="img/logounimayor.jpg" alt="logounimayor" width="200" height="200" class="logouni" class="logosorga"></center>
     </div>
 
   <div data-role="page" id="linea1" data-transition="slide">
         <div data-role="header" class="cabecera" data-url="panel-fixed">
-            <a href="#home"  class=" ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
            <h3>Métodos formales</h3>
             
         </div>
@@ -429,7 +469,7 @@
     </div>
 <div data-role="page" id="linea2" data-transition="slide">
         <div data-role="header" class="cabecera" data-url="panel-fixed">
-            <a href="#home"  class=" ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
            <h3> Sistemas de Información </h3>
            </div>
       <div role="content" class="ui-content" id="contenido">
@@ -438,7 +478,7 @@
     </div>
 <div data-role="page" id="linea3" data-transition="slide">
         <div data-role="header" class="cabecera" data-url="panel-fixed">
-            <a href="#home"  class=" ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
            
            <h3>Ingeniería de Software</h3>
         </div>
@@ -448,7 +488,7 @@
     </div>
   <div data-role="page" id="linea4" data-transition="slide">
         <div data-role="header" class="cabecera" data-url="panel-fixed">
-            <a href="#home"  class="tamaño ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
            <h3>Interacción Humano-Computador</h3>
            
         </div>
@@ -458,7 +498,7 @@
     </div>
      <div data-role="page" id="linea5" data-transition="slide">
         <div data-role="header" class="cabecera" data-url="panel-fixed">
-            <a href="#home"  class="tamaño ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
            <h3>Procesamiento de Imágenes </h3>
            
         </div>
@@ -468,7 +508,7 @@
     </div>
      <div data-role="page" id="linea6" data-transition="slide">
         <div data-role="header" class="cabecera" data-url="panel-fixed">
-            <a href="#home"  class="tamaño ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
            <h3>Sistemas Inteligentes </h3>
            
         </div>
@@ -478,7 +518,7 @@
     </div>
     <div data-role="page" id="linea7" data-transition="slide">
         <div data-role="header" class="cabecera" data-url="panel-fixed">
-            <a href="#home"  class="tamaño ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
            <h3>Informática Educativa</h3>
            
         </div>
@@ -488,7 +528,7 @@
     </div>
      <div data-role="page" id="linea8" data-transition="slide">
         <div data-role="header" class="cabecera" data-url="panel-fixed">
-            <a href="#home"  class="tamaño ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
            <h3>sistemas distribuidos</h3>
            
         </div>
@@ -498,7 +538,7 @@
     </div>
     <div data-role="page" id="linea9" data-transition="slide">
         <div data-role="header" class="cabecera" data-url="panel-fixed">
-            <a href="#home"  class="tamaño ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
            <h3> Datos, Información y Conocimiento</h3>
           
         </div>
@@ -508,7 +548,7 @@
     </div>
      <div data-role="page" id="linea10" data-transition="slide">
         <div data-role="header" class="cabecera" data-url="panel-fixed">
-            <a href="#home"  class="tamaño ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
            <h3>Sistemas Colaborativos</h3>
            </p>
         </div>
@@ -519,7 +559,7 @@
 
     <div data-role="page" id="speakers" data-transition="slide">
         <div data-role="header" class="cabecera" data-url="panel-fixed">
-            <a href="#home"  class="tamaño ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
+            <a href="#home"  class="carga ubicacion ui-btn ui-btn-icon-left ui-corner-all ui-btn-b ui-icon-home ui-btn-icon-notext"></a>
             <h1>SPEAKERS</h1> 
         </div>
 
@@ -539,7 +579,7 @@
            He has worked on several research projects on this topic with application domains spanning from interactive Ground Segment Systems (funded by the French Space Agency CNES), interactive cockpits in large civil aircraft (funded by Airbus). He is also involved in the research network HALA! (Higher Automation Levels in Aviation) funded by SESAR programme which targets at building the future European air traffic management system. The main driver of Philippe’s research has been to address in an even way Usability, Safety and Dependability in order to build trustable safety critical interactive systems. He is the vice-chair of IFIP TC 13 committee and a member of the Conference Management Committee at ACM SIGCHI.</p> 
         </div> 
         <div data-role="collapsible" data-iconpos="right" >
-           <h2 id="ad" > <img class="imgsp"  src="img/Rosa-María-Gil-Iranzo.jpg"> Rosa María Gil Iranzo</h2>
+           <h2 id="ad" > <img class="imgsp"  src="img/Rosa.jpg"> Rosa María Gil Iranzo</h2>
            <p class="resumen">Title: Research Lines related with emotion studies.</p>
            <p class="resumen">Rosa María Gil Iranzo. Professor at the Computer Science and Engineering Department of the Universitat de Lleida. PhD Computer Science (Universitat de Lleida-Spain). Her main research areas include: Human Computer interaction (Usability, Accesibility, User Centered-Design). Semantic Web, Content Management. </p>
            
@@ -552,22 +592,19 @@
             Currently, he is occupying the position of Associate Professor at the Faculty of Computing and Information Technology, and as Advisor of the Vice President for Development for the University International Relationships and Ranking, at the King Abdulaziz University (Jeddah, Saudi Arabia). With several years of experience on effective solutions for the improvement of universities rankings, Habib has diversified his work along many areas that are key factors in the improvement of the overall academic and research reputation. And, gained the experience of the creation of long/short-­terms strategic plans and management towards excellence.</p> 
         </div>  
          <div data-role="collapsible" data-iconpos="right">
-           <h2 class="ad"> <img class="imgsp"  src="img/Alejandro-Fernández.jpg"> Alejandro Fernández</h2> <p class="resumen"> Title: Ciencia Ciudadana: Oportunidades y Desafíos.</p>
+           <h2 class="ad"> <img class="imgsp"  src="img/Alejandro.jpg"> Alejandro Fernández</h2> <p class="resumen"> Title: Ciencia Ciudadana: Oportunidades y Desafíos.</p>
            <p class="resumen">Alejandro Fernández, Dr. Alejandro Fernandez is a full time professor at the Faculty of Informatics, at the National University in La Plata, and researcher at the Scientific Research Commission of the Buenos Aires province.</p> <p class="resumen">He graduated in 1999 with a diploma (Licenciatura) in Computers Science from the Universidad Nacional de La Plata, in Argentine. In July 2005 he got a Ph.d. from the FernUnivesität Hagen, in Germany. From February 2000 until February 2004, he worked as a researcher at the CONCERT division at Fraunhofer-ISPI, in Germany. Since February 2004, Alejandro is a member of LIFIA where he leads R&D projects in topics of CSCW and participates in technology transfer activities. He authored research articles in Software Engineering, Computers Supported Cooperative Work, and Recommender Systems. He actively participates in scientific events as a member of the conference program committee, workshops and as a reviewer of various journals.</p>
 
         </div> 
         <div data-role="collapsible" data-iconpos="right" >
-           <h2 id="ad" > <img class="imgsp"  src="img/Francisco-Javier-Alvarez-Rodríguez.jpg"> Francisco Javier Alvarez Rodríguez</h2>
+           <h2 id="ad" > <img class="imgsp"  src="img/Francisco.jpg"> Francisco Javier Alvarez Rodríguez</h2>
            <p class="resumen">Title: Competencias para la Industria de Software en Latinoamerica</p>
            <p class="resumen">Francisco Javier Alvarez Rodríguez, Dr. Francisco Alvarez Rodríguez, is a Professor of Software Engineering. He holds a BA. in Informatics (1994) and a MA. (1997) from the Autonomous University of Aguascalientes and a EdD degree from the Education Institute of Tamaulipas, México and he is PhD from the National Autonomous University of Mexico.</p> <p class="resumen">He has published research papers in several international conferences in the topics of software engineering and e-learning process. His research interests are software engineering lifecycles for small and medium sized enterprises and software engineering process for e-learning. He is currently president of the National Council for Accreditation of programs and Computing , A.C. (CONAIC) </p>
         </div> 
 
       
     </div>
-     <script type="text/javascript" src="js/informacion.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-
-    <script type="text/javascript" src="cordova.js"></script>
+ <script type="text/javascript" src="js/informacion.js"></script>
 </body>
 
 </html> 
